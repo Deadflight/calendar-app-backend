@@ -2,21 +2,27 @@
   Users Routes / Auth
   host + /api/auth
 */
-
+//Dependencies
 const { Router } = require("express");
 const { check } = require("express-validator");
 
+//Require Middlewares
 const { validateFields } = require("../middlewares/fieldValidators");
 const { validateJWT } = require("../middlewares/validateJWT");
 
-const router = Router();
-
+//Require Controllers
 const {
 	createUser,
 	loginUser,
 	revalidateToken,
 } = require("../controllers/auth");
 
+//Router
+const router = Router();
+
+/* Auth Enpoints */
+
+//Create User
 router.post(
 	"/new",
 	[
@@ -31,6 +37,7 @@ router.post(
 	createUser
 );
 
+//Login User
 router.post(
 	"/",
 	[
@@ -44,6 +51,7 @@ router.post(
 	loginUser
 );
 
+//Renew JWT
 router.get(
 	"/renew",
 	[
