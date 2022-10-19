@@ -16,7 +16,7 @@ const { isDate } = require("../helpers/isDate");
 
 //Controllers
 const {
-	getEvents,
+	getUserEvents,
 	createEvent,
 	updateEvent,
 	deleteEvent,
@@ -31,7 +31,7 @@ router.use(validateJWT);
 /* Events Enpoints */
 
 //Get all the events
-router.get("/", getEvents);
+router.get("/", getUserEvents);
 
 //Create a new event
 router.post(
