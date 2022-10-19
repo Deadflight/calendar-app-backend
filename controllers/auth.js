@@ -12,7 +12,7 @@ const createUser = async (req = request, res = response) => {
 		if (user) {
 			return res.status(400).json({
 				ok: false,
-				msg: "Use already exist with that email",
+				msg: "User already exist with that email",
 			});
 		}
 
